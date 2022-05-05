@@ -1,7 +1,7 @@
 /**
  * 创建一个切片数组，去除array前面的n个元素。（n默认值为1。）
  */
-function _drop(array,num) {
+function _drop(array,num=1) {
     if(num > array.length){
         return [];
     } 
