@@ -1,4 +1,4 @@
-function join(array, sep) {
+function join (array, sep) {
     if (array.length === 0) return '[]';
     let str = '';
     for (let i = 0; i < array.length; i++) {
@@ -9,13 +9,15 @@ function join(array, sep) {
                } else {
                     str = str + sep + JSON.stringify(array[i]);
                }
+            // 避免undefined
+           } else if(typeof array[i] === 'undefined') {
+                if(i !== 0) str = str + sep;
            }else {
                 if(i === 0) {
                     str = str + array[i];
                 } else {
                     str = str + sep + array[i];
                 }
-               
            }
         }
     return str;
